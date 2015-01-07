@@ -1,0 +1,6 @@
+# CUDA_PROFILE_LOG_VERSION 1.4
+# CUDA_PROFILE_CSV 1
+# CUDA_DEVICE_NAME 0 GeForce GTX 280
+timestamp,method,gputime,cputime,occupancy,gridSizeX,gridSizeY,blockSizeX,blockSizeY,blockSizeZ,dynSmemPerBlock,staSmemPerBlock,registerPerThread,streamID,memTransferSize,memTransferDir,gld_coherent,gst_coherent,local_load,local_store,branch,divergent_branch,instructions,warp_serialize,cta_launched,gld_32b,gld_64b,gld_128b,gst_32b,gst_64b,gst_128b
+1089.79,_Z9matrixMulPfS_S_ii,13.92,30.135,1,5,8,16,16,16,0,2084,13,0,,,384,256,0,0,208,0,3408,0,4,0,384,0,0,64,0
+1216.56,memcopy,25.184,80.547,,,,,,,,,,,40960,1

@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SiftGPU", "..\SiftGPU\VC\SiftGPU.vcproj", "{594562D3-609A-47BC-B7E2-789C4E794CC3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestBase", "..\TestWin\VC\TestBase.vcproj", "{57496D03-A005-4650-B041-8E70DDA4A591}"
+	ProjectSection(ProjectDependencies) = postProject
+		{594562D3-609A-47BC-B7E2-789C4E794CC3} = {594562D3-609A-47BC-B7E2-789C4E794CC3}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestWin", "..\TestWin\VC\TestWin.vcproj", "{E1C4EAB3-1677-46F7-92BC-1A1F309B2027}"
+	ProjectSection(ProjectDependencies) = postProject
+		{57496D03-A005-4650-B041-8E70DDA4A591} = {57496D03-A005-4650-B041-8E70DDA4A591}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestWinGlut", "..\TestWin\VC\TestWinGlut.vcproj", "{B33F9B4E-BF99-442B-BDC5-3DAA4BCCA395}"
+	ProjectSection(ProjectDependencies) = postProject
+		{57496D03-A005-4650-B041-8E70DDA4A591} = {57496D03-A005-4650-B041-8E70DDA4A591}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleSIFT", "..\TestWin\VC\SimpleSIFT.vcproj", "{D864A317-5A65-47B1-AA82-C04F99C4280F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{594562D3-609A-47BC-B7E2-789C4E794CC3} = {594562D3-609A-47BC-B7E2-789C4E794CC3}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{594562D3-609A-47BC-B7E2-789C4E794CC3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{594562D3-609A-47BC-B7E2-789C4E794CC3}.Debug|Win32.Build.0 = Debug|Win32
+		{594562D3-609A-47BC-B7E2-789C4E794CC3}.Release|Win32.ActiveCfg = Release|Win32
+		{594562D3-609A-47BC-B7E2-789C4E794CC3}.Release|Win32.Build.0 = Release|Win32
+		{57496D03-A005-4650-B041-8E70DDA4A591}.Debug|Win32.ActiveCfg = Debug|Win32
+		{57496D03-A005-4650-B041-8E70DDA4A591}.Debug|Win32.Build.0 = Debug|Win32
+		{57496D03-A005-4650-B041-8E70DDA4A591}.Release|Win32.ActiveCfg = Release|Win32
+		{57496D03-A005-4650-B041-8E70DDA4A591}.Release|Win32.Build.0 = Release|Win32
+		{E1C4EAB3-1677-46F7-92BC-1A1F309B2027}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E1C4EAB3-1677-46F7-92BC-1A1F309B2027}.Debug|Win32.Build.0 = Debug|Win32
+		{E1C4EAB3-1677-46F7-92BC-1A1F309B2027}.Release|Win32.ActiveCfg = Release|Win32
+		{E1C4EAB3-1677-46F7-92BC-1A1F309B2027}.Release|Win32.Build.0 = Release|Win32
+		{B33F9B4E-BF99-442B-BDC5-3DAA4BCCA395}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B33F9B4E-BF99-442B-BDC5-3DAA4BCCA395}.Debug|Win32.Build.0 = Debug|Win32
+		{B33F9B4E-BF99-442B-BDC5-3DAA4BCCA395}.Release|Win32.ActiveCfg = Release|Win32
+		{B33F9B4E-BF99-442B-BDC5-3DAA4BCCA395}.Release|Win32.Build.0 = Release|Win32
+		{D864A317-5A65-47B1-AA82-C04F99C4280F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D864A317-5A65-47B1-AA82-C04F99C4280F}.Debug|Win32.Build.0 = Debug|Win32
+		{D864A317-5A65-47B1-AA82-C04F99C4280F}.Release|Win32.ActiveCfg = Release|Win32
+		{D864A317-5A65-47B1-AA82-C04F99C4280F}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

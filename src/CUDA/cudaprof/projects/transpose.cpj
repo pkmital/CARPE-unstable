@@ -1,0 +1,26 @@
+<!DOCTYPE cpj>
+<cpj version="1.1" >
+ <session>
+  <name>Session1</name>
+  <device>
+   <name>Device_0</name>
+   <number>0</number>
+  </device>
+  <progpath>"C:/Program Files/NVIDIA Corporation/NVIDIA CUDA SDK/bin/win32/Release/transpose.exe"</progpath>
+  <cmdlineargs>--noprompt</cmdlineargs>
+  <workdirpath>C:/Program Files/NVIDIA Corporation/NVIDIA CUDA SDK/bin/win32/Release</workdirpath>
+  <datetime>06 Mar 2009 14:17:21</datetime>
+ </session>
+ <session>
+  <name>Session2</name>
+  <device>
+   <name>Device_0</name>
+   <number>0</number>
+  </device>
+  <progpath>"C:/Program Files/NVIDIA Corporation/NVIDIA CUDA SDK/bin/win32/Release/transpose.exe"</progpath>
+  <cmdlineargs>--noprompt</cmdlineargs>
+  <workdirpath>C:/Program Files/NVIDIA Corporation/NVIDIA CUDA SDK/bin/win32/Release</workdirpath>
+  <datetime>06 Mar 2009 14:17:25</datetime>
+ </session>
+</cpj>
+

@@ -1,0 +1,111 @@
+%% Parag K. Mital
+%% Aug 2009
+
+
+%% test out which way is the fastest
+num_iterations = 10;
+times = zeros(4);
+
+%% load an image
+imname = 'Winter.jpg';
+im=imread(imname);
+[r c d] = size(im);
+
+%% initialize the thing
+yasift('open');
+
+%% set the parameters
+yasift('params', {'e', '10'});
+
+%% Try the grayscale version 
+for it = 1 : num_iterations
+    tic
+
+    % get the grayscale and convert to row major
+    imgray = rgb2gray(im)';
+    imgray(:);
+    imgray = reshape(imgray, [r,c]);
+
+    [descriptors keys]=yasift(imgray);
+    times(1) = times(1) + toc;
+
+    x=keys(1,:);
+    y=keys(2,:);
+    scale=keys(3,:);
+    ori=keys(4,:);
+
+    figure(1); imshow(im), hold on
+    plot(x,y,'ro');
+    hold off
+end
+
+%% Try the rgb version
+for it = 1 : num_iterations
+    tic
+
+    % convert to row major
+    dim1 = im(:,:,1)';
+    dim2 = im(:,:,2)';
+    dim3 = im(:,:,3)';
+    dim1 = dim1(:);
+    dim2 = dim2(:);
+    dim3 = dim3(:);
+    im2=cell(3,numel(dim1));
+    im2(1,1:numel(dim1))=num2cell(dim1);
+    im2(2,1:numel(dim2))=num2cell(dim2);
+    im2(3,1:numel(dim2))=num2cell(dim3);
+    im2=[im2{:}]; 
+    im2 = reshape(im2, [r,c,d]);
+
+    [descriptors keys]=yasift(im2);
+    times(2) = times(2) + toc;
+
+    x=keys(1,:);
+    y=keys(2,:);
+    scale=keys(3,:);
+    ori=keys(4,:);
+
+    figure(2); imshow(im), hold on
+    plot(x,y,'ro');
+    hold off
+end
+
+%% Try the original version
+for it = 1 : num_iterations
+    tic
+    [descriptors keys]=yasift(imname);
+    times(3) = times(3) + toc;
+
+    x=keys(1,:);
+    y=keys(2,:);
+    scale=keys(3,:);
+    ori=keys(4,:);
+
+    figure(3); imshow(im), hold on
+    plot(x,y,'ro');
+    hold off
+end
+%% Try the original version after reading and writing the image
+for it = 1 : num_iterations
+    tic
+    filename = [imname(1:length(imname)-4) '_1.jpg'];
+    imwrite(im, filename);
+
+    [descriptors keys]=yasift(filename);
+    times(4) = times(4) + toc;
+
+    x=keys(1,:);
+    y=keys(2,:);
+    scale=keys(3,:);
+    ori=keys(4,:);
+
+    figure(4); imshow(im), hold on
+    plot(x,y,'ro');
+    hold off
+end
+
+%% plot the results
+
+bar(1:4, times)
+%% close the thing (though it doesn't seem to leave until MATLAB exits)
+yasift('destroy')
